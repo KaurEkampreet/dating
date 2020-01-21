@@ -2,7 +2,9 @@
 /**
  * Ekampreet Kaur
  * Date: January 19, 2020
- * Description: This file define a default route. When a user navigates to
+ * Description: This file define a default route. It route directory to view/home.html
+ *
+ * When a user navigates to
  * the route of our directory they will be taken to the view that we have defined as views/home.html
  */
 //error reporting turned on

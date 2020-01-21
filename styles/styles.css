@@ -23,33 +23,31 @@ lists a:hover {
     background-color: #111;
 }
 
-/* styling for the container that holds home page testimonials*/
 #testimonial-container {
     padding-top: 1px;
     padding-bottom: 1px;
     border-left: 1px solid white;
     margin: 0 10px;
-    background: linear-gradient(to right, dimgrey, red);
+    background: linear-gradient(dimgrey, red);
 }
 
-/* style for the testimonial title on home page */
+/* testimonial title on home page */
 #testimonial {
     font-weight: bolder;
     font-size: larger;
 }
 
-/* styles to help clear gradient background */
-#testimonial-white-bg {
+/*  gradient background */
+#testimonial-bg {
     background-color: white;
     padding: 3px;
     margin-left: -1px;
     margin-right: -1px;
 }
 
-
+/* images size */
 #image {
     border-radius: 25px;
-
     width: 600px;
     height: auto;
 }
