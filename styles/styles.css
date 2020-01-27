@@ -53,9 +53,16 @@ lists a:hover {
 
 
 .submit {
-    width: 150px;
+    width: 5000px;
     text-align: center;
     margin:0 auto;
+    position: absolute;
+    top: 50%;
+
+}
+
+.button {
+    text-align: center;
 }
 
 
