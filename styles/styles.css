@@ -4,7 +4,6 @@
     padding: 0;
     overflow: hidden;
     background-color: #333;
-
 }
 
 .lists {
@@ -51,3 +50,16 @@ lists a:hover {
     width: 600px;
     height: auto;
 }
+
+
+.submit {
+    width: 150px;
+    text-align: center;
+    margin:0 auto;
+}
+
+
+
+
+
+
