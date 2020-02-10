@@ -65,6 +65,10 @@ lists a:hover {
     text-align: center;
 }
 
+.err {
+    color: darkred;
+}
+
 
 
 

@@ -22,53 +22,64 @@
 <div id="nav">
     <ul id="list">
         <li class="lists"><a href="https://ekaur.greenriverdev.com/328/dating/">SoulMate</a></li>
-
     </ul>
 </div>
 <div class="container border rounded mt-3 clearfix">
-    <h1 class="ml-3 mt-4 mb-0">Personal Information</h1>
+    <h1 class="ml-3 mt-4">Personal Information</h1>
     <hr class="mt-0">
     <div class="ml-3">
-        <form action="profile" method="post">
+        <form action="#" method="post">
             <div class="row">
                 <div class="form-group col-6">
                     <div class="row">
                         <div class="col-lg-12">
                             <label class="font-weight-bold" for="firstName">First Name</label>
-                            <input type="text" class="form-control" name="firstName" id="firstName">
+                            <input type="text" class="form-control" name="firstName" id="firstName" value="{{@firstName}}">
+                            <check if="{{ @errors['firstName'] }}">
+                                <span class="err">{{ @errors['firstName'] }}</span>
+                            </check>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <label class="font-weight-bold mt-2" for="LastName">Last Name</label>
-                            <input type="text" class="form-control" name="lastName" id="LastName">
+                            <input type="text" class="form-control" name="lastName" id="LastName" value="{{@lastName}}">
+                            <check if="{{ @errors['lastName'] }}">
+                                <span class="err">{{ @errors['lastName'] }}</span>
+                            </check>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <label class="font-weight-bold mt-2" for="age"> Age</label>
-                            <input type="text" class="form-control" name="age" id='age' >
+                            <input type="text" class="form-control" name="age" id='age' value="{{@age}}">
+                            <check if="{{ @errors['age'] }}">
+                                <span class="err">{{ @errors['age'] }}</span>
+                            </check>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <label class="font-weight-bold mt-2"> Gender</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gender" value="Male" id="male">
-                                <label class="radio-inline" for="male">
-                                    Male
-                                </label>
-                                <input class="form-check-label ml-3" type="radio"  value="Female" name="gender" id="female">
-                                <label class=" radio-inline" for="female">
-                                    Female
-                                </label>
+                                <repeat group="{{ @genders }}" value="{{ @genderOption }}">
+                                    <label><input type="radio" class="form-check-input"
+                                                  name="gender"
+                                                  value="{{ @genderOption }}"
+                                        <check if = "{{@gender== @genderOption}}"> checked="checked"</check>
+                                        >{{ ucfirst(@genderOption) }}
+                                    </label><br>
+                                </repeat>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-12 mt-2">
                             <label class="font-weight-bold" for="phone">Phone</label>
-                            <input type="tel" class="form-control" name="phone" id="phone">
+                            <input type="tel" class="form-control" name="phone" id="phone" value="{{@phone}}">
+                            <check if="{{ @errors['phone'] }}">
+                                <span class="err">{{ @errors['phone'] }}</span>
+                            </check>
                         </div>
                     </div>
                 </div>
