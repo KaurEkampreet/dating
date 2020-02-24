@@ -1,5 +1,5 @@
 {
-  "name": "328/dating2",
+  "name": "ekaur/328/dating",
   "authors": [
     {
       "name": "Ekampreet Kaur",
@@ -10,6 +10,6 @@
     "bcosca/fatfree-core": "dev-master"
   },
   "autoload": {
-    "classmap": ["model/", "controller/", "classes/"]
+    "classmap": ["controller/", "classes/", "model/"]
   }
 }

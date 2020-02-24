@@ -4,7 +4,7 @@ class datingcontroller
 {
     private $_f3;
 
-    function __construct()
+    function __construct($f3)
     {
         $this->_f3 = $f3;
     }
@@ -37,12 +37,11 @@ class datingcontroller
             $_SESSION['checkbox'] = $checkBox;
 
             if (isset($_POST['checkbox'])) {
-                $member = new PremiumMember($firstName, $lastName, $age, $gender, $phone);
+                $member = new premiumMember($firstName, $lastName, $age, $gender, $phone);
             } else {
-                $member = new Member($firstName, $lastName, $age, $gender, $phone);
+                $member = new member($firstName, $lastName, $age, $gender, $phone);
             }
             if (validForm()) {
-                //store the data in member object if its valid
                 $_SESSION['member'] = $member;
                 //Redirect to profile
                 $this->_f3->reroute('/profile');
@@ -53,7 +52,7 @@ class datingcontroller
         echo $view->render('views/personalinformation.html');
     }
 
-    function profileInfo()
+    function profile()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             //Get data from profile form
@@ -68,7 +67,7 @@ class datingcontroller
             $this->_f3->set('seeking', $seeking);
             $this->_f3->set('inputText', $inputText);
 
-            if (profileValidation()) {
+            if (profileInformationValidation()) {
                 $_SESSION['member']->setEmail($email);
                 $_SESSION['member']->setState($state);
                 $_SESSION['member']->setSeeking($seeking);
@@ -95,19 +94,19 @@ class datingcontroller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             //Get data from indoor
             if (!empty($_POST['indoor'])) {
-                foreach ($_POST['indoor'] as $item) {
-                    array_push($selectedIndoors, $item);
+                foreach ($_POST['indoor'] as $value) {
+                    array_push($selectedIndoors, $value);
                 }
             }
             if (!empty($_POST['outdoor'])) {
-                foreach ($_POST['outdoor'] as $item) {
-                    array_push($selectedOutdoors, $item);
+                foreach ($_POST['outdoor'] as $value) {
+                    array_push($selectedOutdoors, $value);
                 }
             }
             $this->_f3->set('indoorInterests', $selectedIndoors);
             $this->_f3->set('outdoorInterests', $selectedOutdoors);
 
-            if (interestsValidation()) {
+            if (interests()) {
                 //Write data to Session
                 $_SESSION['indoor'] = $selectedIndoors;
                 $_SESSION['outdoor'] = $selectedOutdoors;
@@ -125,7 +124,4 @@ class datingcontroller
         $view = new Template();
         echo $view->render('views/summary.html');
     }
-
-
-
 }

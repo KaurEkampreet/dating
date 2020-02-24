@@ -1,6 +1,6 @@
 <?php
 
-class Member
+class member
 {
     private  $_fName;
     private  $_lName;
@@ -12,13 +12,13 @@ class Member
     private  $_seeking;
     private  $_bio;
 
-    function __construct($_fName, $_lName, $_age, $gender, $_phone)
+    function __construct($fName, $lName, $age, $gender, $phone)
     {
-        $this->_fName = $_fName;
-        $this->_lName = $_lName;
-        $this->_age = $_age;
+        $this->_fName = $fName;
+        $this->_lName = $lName;
+        $this-> _age = $age;
         $this->_gender = $gender;
-        $this->_phone = $_phone;
+        $this->_phone = $phone;
     }
 
     function getFirstName()
@@ -41,9 +41,9 @@ class Member
         $this->_lName = $lName;
     }
 
-    function getAge($age)
+    function getAge()
     {
-        $this->_age = $age;
+        return $this->_age;
     }
 
     function setAge($age)
@@ -61,12 +61,12 @@ class Member
         $this->_gender = $gender;
     }
 
-    function getPhoneNum()
+    function getPhone()
     {
         return $this->_phone;
     }
 
-    function setPhoneNum($phone)
+    function setPhone($phone)
     {
         $this->_phone = $phone;
     }
