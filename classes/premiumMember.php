@@ -1,4 +1,9 @@
 <?php
+/**
+ * Ekampreet Kaur
+ * Date: Februrary 23, 2020
+ * Description: getter and setter method for premiummember
+ */
 class premiumMember extends member
 {
     private $_inDoorInterests;

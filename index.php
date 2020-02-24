@@ -1,7 +1,7 @@
 <?php
 /**
  * Ekampreet Kaur
- * Date: January 19, 2020
+ * Date: Feb 23 2020
  * Description: This file define a default route. It route directory to view/home.html
  *
  * When a user navigates to

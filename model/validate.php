@@ -1,4 +1,9 @@
 <?php
+/**
+ * Ekampreet Kaur
+ * Date: Februrary 23, 2020
+ * Description: validation for required fields
+ */
 function validForm()
 {
     global $f3;
