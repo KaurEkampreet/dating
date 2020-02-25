@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Ekampreet Kaur
+ * Date: Februrary 23, 2020
+ * Description: controller class
+ */
 class datingcontroller
 {
     private $_f3;
@@ -94,13 +98,13 @@ class datingcontroller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             //Get data from indoor
             if (!empty($_POST['indoor'])) {
-                foreach ($_POST['indoor'] as $value) {
-                    array_push($selectedIndoors, $value);
+                foreach ($_POST['indoor'] as $item) {
+                    array_push($selectedIndoors, $item);
                 }
             }
             if (!empty($_POST['outdoor'])) {
-                foreach ($_POST['outdoor'] as $value) {
-                    array_push($selectedOutdoors, $value);
+                foreach ($_POST['outdoor'] as $item) {
+                    array_push($selectedOutdoors, $item);
                 }
             }
             $this->_f3->set('indoorInterests', $selectedIndoors);
