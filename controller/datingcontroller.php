@@ -128,4 +128,10 @@ class datingcontroller
         $view = new Template();
         echo $view->render('views/summary.html');
     }
+
+    function admin()
+    {
+        $view = new Template();
+        echo $view->render("views/admin.html");
+    }
 }

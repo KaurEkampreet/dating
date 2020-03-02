@@ -1,4 +1,10 @@
 <?php
+//create table member(member_id int(200) NOT NULL AUTO_INCREMENT, fname VARCHAR(200) not null, lname varchar(200) not null, age int(50) not null, gender varchar(200), phone varchar(50) not null, email varchar(200) not null, state varchar(50), seeking varchar(50), bio VARCHAR (200), premium TINYINT(1), image varchar(250), PRIMARY KEY (member_id));
+
+//CREATE TABLE interest(interest_id int(200) not null AUTO_INCREMENT, interest varchar(200) not null, type varchar(200) not null, PRIMARY KEY(interest_id));
+
+//CREATE TABLE member_interest(member_id int(200) not null, interest_id int(200) not null, FOREIGN KEY(member_id) REFERENCES member(member_id), FOREIGN KEY(interest_id) REFERENCES interest(interest_id));
+
 
 require_once("config.php");
 
