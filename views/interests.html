@@ -30,7 +30,7 @@
     <hr class="mt-0">
     <div class="ml-3">
         <form action="#" method="post">
-            <label class="font-weight-bold"> In-door Interests</label>
+            <label class="font-weight-bold"> Indoor Interests</label>
             <div class="row">
                 <repeat group="{{ @indoor }}" value="{{ @indoorOptions }}">
                     <div class="col-lg-3">
@@ -42,7 +42,7 @@
                             <check if="{{ isset(@indoorInterests)&& in_array(@indoorOptions, @indoorInterests)}}">
                                 checked="checked"
                             </check>
-                            >{{ ucfirst(@indoorOptions) }}
+                            >{{ (@indoorOptions) }}
                         </label><br>
                     </div>
                 </repeat>
@@ -51,7 +51,7 @@
                 <span class="err">{{ @errors['indoor'] }}</span>
             </check><br>
             <!--row closed -->
-            <label class="font-weight-bold"> Out-door Interests</label>
+            <label class="font-weight-bold"> Outdoor Interests</label>
             <div class="row">
                 <repeat group="{{ @outdoor }}" value="{{ @outdoorOptions }}">
                     <div class="col-lg-3">
@@ -61,7 +61,7 @@
                             <check if="{{ isset(@outdoorInterests) && in_array(@outdoorOptions, @outdoorInterests)}}">
                                 checked="checked"
                             </check>
-                            >{{ ucfirst(@outdoorOptions) }}
+                            >{{ (@outdoorOptions) }}
                         </label><br>
                     </div>
                 </repeat>

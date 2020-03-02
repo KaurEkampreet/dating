@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
+</head>
+<body>
+<div class="container">
+    <h3>Admin</h3>
+    <div class="p-3">
+        <table class="display" id="member-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>State</th>
+                <th>Seeking</th>
+                <th>Premium</th>
+                <th>Interests</th>
+            </tr>
+            </thead>
+            <tbody>
+            <repeat >
+                <tr>
+                    <th>{{ @member['member_id] }}</th>
+                    <th>{{ @member['fname']}} {{ @member['lname'] }}</th>
+                    <th>{{ @member['age] }}</th>
+                    <th>{{ @member['gender] }}</th>
+                    <th>{{ @member['phone] }}</th>
+                    <th>{{ @member['email] }}</th>
+                    <th>{{ @member['state] }}</th>
+                    <th>{{ @member['seek] }}</th>
+                </tr>
+            </repeat>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+
+</body>
+</html>
