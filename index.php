@@ -19,37 +19,19 @@ session_start();
 //instantiate Fat-free
 $f3 = Base::instance();
 $controller = new datingcontroller($f3);
+$db = new Database();
+
 
 $f3->set('DEBUG', 3);
 //Define arrays
-$f3->set('genders', array(
-    'male',
-    'female'
-));
-$f3->set('states', array(
-    'washington',
-    'oregon',
-    'idaho',
-    'wyoming'
-));
-$f3->set('indoor', array(
-    'tv',
-    'puzzles',
-    'movies',
-    'reading',
-    'cooking',
-    'playing cards',
-    'board games',
-    'video games'
-));
-$f3->set('outdoor', array(
-    'hiking',
-    'walking',
-    'biking',
-    'climbing',
-    'swimming',
-    'collecting stones'
-));
+$f3->set('genders', array('male', 'female'));
+
+$f3->set('states', array('washington', 'oregon', 'idaho', 'wyoming', 'California'));
+
+$f3->set('indoor', array('tv', 'puzzles', 'movies', 'reading','cooking', 'playing cards', 'board games', 'video games'));
+
+$f3->set('outdoor', array('hiking', 'walking', 'biking', 'climbing', 'swimming', 'collecting stones'));
+
 // a default route
 $f3->route('GET /', function () {
     $GLOBALS['controller']->home();
@@ -72,6 +54,11 @@ $f3->route('GET|POST /summary', function ($f3) {
     $GLOBALS['controller']->summary();
     session_destroy();
     $_SESSION = array();
+
+});
+$f3->route("GET /admin", function(){
+    $GLOBALS['controller']->admin();
+
 });
 //run fat free
 $f3->run();
