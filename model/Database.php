@@ -45,7 +45,7 @@ class Database
     $statement->bindParam(':premium',$ipremium);
 
     $statement->execute();
-
+        return$this->_dbh->lastInsertId();
     }
 
     function getMembers()
